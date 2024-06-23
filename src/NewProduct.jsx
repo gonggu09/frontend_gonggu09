@@ -58,7 +58,7 @@ const NewProduct = () => {
           <Input
             type="text"
             name="productName"
-            placeholder="상품명"
+            placeholder="상품명을 입력해주세요"
             value={formData.productName}
             onChange={handleChange}
           />
@@ -68,7 +68,7 @@ const NewProduct = () => {
           <Input
             type="text"
             name="startDate"
-            placeholder="시작 날짜"
+            placeholder="YYYY-MM-DD"
             value={formData.startDate}
             onChange={handleChange}
           />
@@ -78,7 +78,7 @@ const NewProduct = () => {
           <Input
             type="text"
             name="endDate"
-            placeholder="종료 날짜"
+            placeholder="YYYY-MM-DD"
             value={formData.endDate}
             onChange={handleChange}
           />
@@ -88,7 +88,7 @@ const NewProduct = () => {
           <Input
             type="text"
             name="price"
-            placeholder="가격"
+            placeholder="가격을 입력해주세요"
             value={formData.price}
             onChange={handleChange}
           />
@@ -98,7 +98,7 @@ const NewProduct = () => {
           <Input
             type="text"
             name="url"
-            placeholder="url"
+            placeholder="상품 판매 사이트를 제출해주세요"
             value={formData.url}
             onChange={handleChange}
           />
