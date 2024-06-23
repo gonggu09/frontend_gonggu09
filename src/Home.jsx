@@ -7,7 +7,10 @@ const Home = () => {
     <>
       <Header />
       <Container>
-        <Category>화장품 공구 모음</Category>
+        <CategoryContainer>
+          <Category>화장품 공구 모음</Category>
+          <Button>상품 등록</Button>
+        </CategoryContainer>
         <Section>
           <ProductSection
             url="https://www.naver.com"
@@ -47,10 +50,27 @@ const Container = styled.div`
   gap: 30px;
 `;
 
+const CategoryContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
 const Category = styled.span`
   font-size: 18px;
   font-weight: 500;
   color: black;
+`;
+
+const Button = styled.button`
+  display: flex;
+  width: 80px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  color: white;
+  background-color: skyblue;
 `;
 
 const Section = styled.div`
