@@ -16,8 +16,8 @@ const Select = () => {
     <Container>
       <Text>당신은 어떤 고객 유형입니까?</Text>
       <Type>
-        <Button onClick={handleBuyClick}>판매자</Button>
-        <Button onClick={handleSellerClick}>구매자</Button>
+        <Button onClick={handleBuyClick}>구매자</Button>
+        <Button onClick={handleSellerClick}>판매자</Button>
       </Type>
     </Container>
   );
