@@ -26,6 +26,7 @@ const Home = () => {
 export default Home;
 
 const Container = styled.div`
+  font-family: "HSSaemaul-Regular";
   background-color: white;
   display: flex;
   flex-direction: column;
