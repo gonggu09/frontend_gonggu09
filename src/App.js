@@ -1,11 +1,12 @@
 import React from "react";
-import { GlobalStyle } from "./styles/GlobalStyles"; // GlobalStyle 불러오기
+import { GlobalStyle } from "./styles/GlobalStyles";
+import Home from "./Home";
 
 function App() {
   return (
     <>
-      <GlobalStyle /> {/* GlobalStyle 적용 */}
-      {/* 나머지 컴포넌트들 */}
+      <GlobalStyle />
+      <Home />
     </>
   );
 }
