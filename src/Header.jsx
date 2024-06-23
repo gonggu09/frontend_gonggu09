@@ -3,7 +3,7 @@ import styled from "styled-components";
 const Header = () => {
   return (
     <Container>
-      <Logo>우리의 프로젝트 이름</Logo>
+      <Logo>09 MAGUMAGU</Logo>
     </Container>
   );
 };

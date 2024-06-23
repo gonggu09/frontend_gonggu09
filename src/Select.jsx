@@ -14,7 +14,7 @@ const Select = () => {
 
   return (
     <Container>
-      <Text>당신은 어떤 사용자입니까?</Text>
+      <Text>당신은 어떤 고객 유형입니까?</Text>
       <Type>
         <Button onClick={handleBuyClick}>판매자</Button>
         <Button onClick={handleSellerClick}>구매자</Button>
