@@ -4,29 +4,40 @@ import Header from "./Header";
 
 const Home = () => {
   return (
-    <Container>
+    <>
       <Header />
-      <CategorySection>
-        <Category>화장품</Category>
-        <Category>의류</Category>
-        <Category>숙박</Category>
-        <Category>음식</Category>
-      </CategorySection>
-      <Section>
-        <ProductSection />
-        <ProductSection />
-        <ProductSection />
-        <ProductSection />
-        <ProductSection />
-      </Section>
-    </Container>
+      <Container>
+        <Category>화장품 공구 모음</Category>
+        <Section>
+          <ProductSection
+            url="https://www.naver.com"
+            productName="유리아쥬 립밤"
+            productImg="https://github.com/gonggu09/frontend_gonggu09/assets/129318957/7c401452-f25d-4cde-b506-2005907d5ed7"
+            sellerImg="https://github.com/gonggu09/frontend_gonggu09/assets/129318957/7c401452-f25d-4cde-b506-2005907d5ed7"
+            sellerName="하루"
+            startDate="2024-05-04"
+            endDate="2024-06-25"
+            price="28000"
+          />
+          <ProductSection
+            url="https://www.naver.com"
+            productName="유리아쥬 립밤"
+            productImg="https://github.com/gonggu09/frontend_gonggu09/assets/129318957/7c401452-f25d-4cde-b506-2005907d5ed7"
+            sellerImg="https://github.com/gonggu09/frontend_gonggu09/assets/129318957/7c401452-f25d-4cde-b506-2005907d5ed7"
+            sellerName="하루"
+            startDate="2024-05-04"
+            endDate="2024-06-25"
+            price="28000"
+          />
+        </Section>
+      </Container>
+    </>
   );
 };
 
 export default Home;
 
 const Container = styled.div`
-  font-family: "HSSaemaul-Regular";
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -36,12 +47,9 @@ const Container = styled.div`
   gap: 30px;
 `;
 
-const CategorySection = styled.div`
-  display: flex;
-`;
-
 const Category = styled.span`
-  font-size: 14px;
+  font-size: 18px;
+  font-weight: 500;
   color: black;
 `;
 
