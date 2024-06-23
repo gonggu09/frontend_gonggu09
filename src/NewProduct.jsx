@@ -23,6 +23,11 @@ const NewProduct = () => {
     }
   };
 
+  const handleRemoveImage = () => {
+    setFormData({ ...formData, file: null });
+    setPreviewImg(null);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(formData);
@@ -42,7 +47,12 @@ const NewProduct = () => {
             />
           </Label>
         )}
-        {previewImg && <PreviewImage src={previewImg} alt="미리보기 이미지" />}
+        {previewImg && (
+          <ImageContainer>
+            <PreviewImage src={previewImg} alt="미리보기 이미지" />
+            <RemoveButton onClick={handleRemoveImage}>x</RemoveButton>
+          </ImageContainer>
+        )}
         <FormField>
           <LabelText>상품명</LabelText>
           <Input
@@ -160,6 +170,11 @@ const FileInput = styled.input`
   display: none;
 `;
 
+const ImageContainer = styled.div`
+  position: relative;
+  display: inline-block;
+`;
+
 const PreviewImage = styled.img`
   width: 100%;
   max-width: 200px;
@@ -167,6 +182,30 @@ const PreviewImage = styled.img`
   border: 1px solid #ccc;
   border-radius: 10px;
   object-fit: cover;
+`;
+
+const RemoveButton = styled.button`
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(255, 0, 0, 0.7);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  line-height: 16px;
+  padding: 0;
+  transition: background 0.3s;
+
+  &:hover {
+    background: rgba(255, 0, 0, 1);
+  }
 `;
 
 const Input = styled.input`
