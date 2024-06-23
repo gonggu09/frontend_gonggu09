@@ -98,17 +98,6 @@ const Category = styled.span`
   color: black;
 `;
 
-const Button = styled.button`
-  display: flex;
-  width: 80px;
-  height: 40px;
-  justify-content: center;
-  align-items: center;
-  border-radius: 5px;
-  color: white;
-  background-color: skyblue;
-`;
-
 const Section = styled.div`
   display: flex;
   flex-direction: column;

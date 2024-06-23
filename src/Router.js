@@ -3,6 +3,7 @@ import { Route, Routes, BrowserRouter } from "react-router-dom";
 import Home from "./Home";
 import Buyer from "./Buyer";
 import Seller from "./Seller";
+import NewProduct from "./NewProduct";
 
 const Layout = ({ children }) => {
   return <Home>{children}</Home>;
@@ -28,6 +29,7 @@ function Router() {
             </Layout>
           }
         />
+        <Route path="/sell/product" element={<NewProduct />} />
       </Routes>
     </BrowserRouter>
   );

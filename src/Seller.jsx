@@ -1,15 +1,22 @@
 import styled from "styled-components";
-import ProductSection from "./ProductSection";
+import SellProduct from "./SellProduct";
+import { useNavigate } from "react-router-dom";
 
 const Seller = () => {
+  const navigation = useNavigate();
+
+  const handleClick = () => {
+    navigation("/sell/product");
+  };
+
   return (
     <Container>
       <CategoryContainer>
         <Category>화장품 공구 모음</Category>
-        <Button>상품 등록</Button>
+        <Button onClick={handleClick}>상품 등록</Button>
       </CategoryContainer>
       <Section>
-        <ProductSection
+        <SellProduct
           url="https://www.naver.com"
           productName="유리아쥬 립밤"
           productImg="https://github.com/gonggu09/frontend_gonggu09/assets/129318957/7c401452-f25d-4cde-b506-2005907d5ed7"
@@ -19,7 +26,7 @@ const Seller = () => {
           endDate="2024-06-25"
           price="28000"
         />
-        <ProductSection
+        <SellProduct
           url="https://www.naver.com"
           productName="유리아쥬 립밤"
           productImg="https://github.com/gonggu09/frontend_gonggu09/assets/129318957/7c401452-f25d-4cde-b506-2005907d5ed7"
@@ -29,7 +36,7 @@ const Seller = () => {
           endDate="2024-06-25"
           price="28000"
         />
-        <ProductSection
+        <SellProduct
           url="https://www.naver.com"
           productName="유리아쥬 립밤"
           productImg="https://github.com/gonggu09/frontend_gonggu09/assets/129318957/7c401452-f25d-4cde-b506-2005907d5ed7"
@@ -39,7 +46,7 @@ const Seller = () => {
           endDate="2024-06-25"
           price="28000"
         />
-        <ProductSection
+        <SellProduct
           url="https://www.naver.com"
           productName="유리아쥬 립밤"
           productImg="https://github.com/gonggu09/frontend_gonggu09/assets/129318957/7c401452-f25d-4cde-b506-2005907d5ed7"
@@ -49,7 +56,7 @@ const Seller = () => {
           endDate="2024-06-25"
           price="28000"
         />
-        <ProductSection
+        <SellProduct
           url="https://www.naver.com"
           productName="유리아쥬 립밤"
           productImg="https://github.com/gonggu09/frontend_gonggu09/assets/129318957/7c401452-f25d-4cde-b506-2005907d5ed7"
@@ -59,7 +66,7 @@ const Seller = () => {
           endDate="2024-06-25"
           price="28000"
         />
-        <ProductSection
+        <SellProduct
           url="https://www.naver.com"
           productName="유리아쥬 립밤"
           productImg="https://github.com/gonggu09/frontend_gonggu09/assets/129318957/7c401452-f25d-4cde-b506-2005907d5ed7"
