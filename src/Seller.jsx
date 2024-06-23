@@ -12,7 +12,12 @@ const Seller = () => {
   return (
     <Container>
       <CategoryContainer>
-        <Category>화장품 공구 모음</Category>
+        <CategoryList>
+          <SelectedCategory>화장품</SelectedCategory>
+          <Category>음식</Category>
+          <Category>의류</Category>
+          <Category>숙박</Category>
+        </CategoryList>
         <Button onClick={handleClick}>상품 등록</Button>
       </CategoryContainer>
       <Section>
@@ -100,10 +105,27 @@ const CategoryContainer = styled.div`
   align-items: center;
 `;
 
+const SelectedCategory = styled.span`
+  font-size: 18px;
+  font-weight: 500;
+  color: #007bff;
+  padding: 10px;
+  border: 1px solid #007bff;
+  border-radius: 5px;
+`;
+
+const CategoryList = styled.div`
+  display: flex;
+  gap: 10px;
+`;
+
 const Category = styled.span`
   font-size: 18px;
   font-weight: 500;
   color: black;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
 `;
 
 const Button = styled.button`
@@ -114,7 +136,7 @@ const Button = styled.button`
   align-items: center;
   border-radius: 5px;
   color: white;
-  background-color: skyblue;
+  background-color: #007bff;
 `;
 
 const Section = styled.div`

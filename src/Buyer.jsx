@@ -5,7 +5,10 @@ const Buyer = () => {
   return (
     <Container>
       <CategoryContainer>
-        <Category>화장품 공구 모음</Category>
+        <SelectedCategory>화장품</SelectedCategory>
+        <Category>음식</Category>
+        <Category>의류</Category>
+        <Category>숙박</Category>
       </CategoryContainer>
       <Section>
         <BuyProduct
@@ -88,7 +91,7 @@ const Container = styled.div`
 
 const CategoryContainer = styled.div`
   display: flex;
-  justify-content: space-between;
+  gap: 10px;
   align-items: center;
 `;
 
@@ -96,6 +99,18 @@ const Category = styled.span`
   font-size: 18px;
   font-weight: 500;
   color: black;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+`;
+
+const SelectedCategory = styled.span`
+  font-size: 18px;
+  font-weight: 500;
+  color: #007bff;
+  padding: 10px;
+  border: 1px solid #007bff;
+  border-radius: 5px;
 `;
 
 const Section = styled.div`
