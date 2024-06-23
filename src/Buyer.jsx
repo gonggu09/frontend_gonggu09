@@ -1,7 +1,25 @@
 import styled from "styled-components";
 import BuyProduct from "./BuyProduct";
+import { useEffect, useState } from "react";
+import { instance } from "./api/insance";
 
 const Buyer = () => {
+  const [productList, setProductList] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await instance.get("/gonggu/item/");
+        if (response.status === 200) {
+          setProductList(response.data);
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    fetchData();
+  }, []);
+
   return (
     <Container>
       <CategoryContainer>
@@ -11,65 +29,58 @@ const Buyer = () => {
         <Category>숙박</Category>
       </CategoryContainer>
       <Section>
+        {productList?.map((item, index) => (
+          <BuyProduct
+            key={index}
+            url={item.url}
+            productName={item.productName}
+            productImg={item.productImg}
+            sellerImg={item.sellerId.profile_photo}
+            sellerName={item.sellerId.name}
+            startDate={item.startDate}
+            endDate={item.endDate}
+            price={item.price}
+          />
+        ))}
         <BuyProduct
-          url="https://www.naver.com"
-          productName="유리아쥬 립밤"
-          productImg="https://github.com/gonggu09/frontend_gonggu09/assets/129318957/7c401452-f25d-4cde-b506-2005907d5ed7"
-          sellerImg="https://github.com/gonggu09/frontend_gonggu09/assets/129318957/7c401452-f25d-4cde-b506-2005907d5ed7"
+          url="https://instashop.srookpay.com/triz06/Detail/STR58179078"
+          productName="하루의 톤업크림"
+          productImg="https://github.com/gonggu09/frontend_gonggu09/assets/129318957/766d8754-afa9-44e5-8f54-b9750a543045"
+          sellerImg="https://github.com/gonggu09/frontend_gonggu09/assets/129318957/76a4da2d-7d07-4c9a-9627-147f1fb30746"
           sellerName="하루"
           startDate="2024-05-04"
           endDate="2024-06-25"
           price="28000"
         />
         <BuyProduct
-          url="https://www.naver.com"
-          productName="유리아쥬 립밤"
-          productImg="https://github.com/gonggu09/frontend_gonggu09/assets/129318957/7c401452-f25d-4cde-b506-2005907d5ed7"
-          sellerImg="https://github.com/gonggu09/frontend_gonggu09/assets/129318957/7c401452-f25d-4cde-b506-2005907d5ed7"
-          sellerName="하루"
-          startDate="2024-05-04"
+          url="https://link.inpock.co.kr/boramchan_mk?fbclid=PAAaZhiw1B2cKlckuraYpFdoVBNtR32nEQklWPkRCwJQEqQLt4xjXDlty17Ww"
+          productName="솔핑 톤업크림"
+          productImg="https://github.com/gonggu09/frontend_gonggu09/assets/129318957/babd7f20-1027-4c7d-a54b-faec7f26458c"
+          sellerImg="https://github.com/gonggu09/frontend_gonggu09/assets/129318957/babd7f20-1027-4c7d-a54b-faec7f26458c"
+          sellerName="솔핑"
+          startDate="2024-06-23"
           endDate="2024-06-25"
-          price="28000"
+          price="20000"
         />
         <BuyProduct
-          url="https://www.naver.com"
-          productName="유리아쥬 립밤"
-          productImg="https://github.com/gonggu09/frontend_gonggu09/assets/129318957/7c401452-f25d-4cde-b506-2005907d5ed7"
-          sellerImg="https://github.com/gonggu09/frontend_gonggu09/assets/129318957/7c401452-f25d-4cde-b506-2005907d5ed7"
-          sellerName="하루"
-          startDate="2024-05-04"
-          endDate="2024-06-25"
-          price="28000"
+          url="https://link.inpock.co.kr/boramchan_mk?fbclid=PAAaZhiw1B2cKlckuraYpFdoVBNtR32nEQklWPkRCwJQEqQLt4xjXDlty17Ww"
+          productName="앰플"
+          productImg="https://github.com/gonggu09/frontend_gonggu09/assets/129318957/9f999d2f-0ddd-4bf7-889a-87541ce98534"
+          sellerImg="https://github.com/gonggu09/frontend_gonggu09/assets/129318957/9f999d2f-0ddd-4bf7-889a-87541ce98534"
+          sellerName="솔핑"
+          startDate="2024-06-07"
+          endDate="2024-06-10"
+          price="15000"
         />
         <BuyProduct
-          url="https://www.naver.com"
-          productName="유리아쥬 립밤"
-          productImg="https://github.com/gonggu09/frontend_gonggu09/assets/129318957/7c401452-f25d-4cde-b506-2005907d5ed7"
-          sellerImg="https://github.com/gonggu09/frontend_gonggu09/assets/129318957/7c401452-f25d-4cde-b506-2005907d5ed7"
-          sellerName="하루"
-          startDate="2024-05-04"
-          endDate="2024-06-25"
-          price="28000"
-        />
-        <BuyProduct
-          url="https://www.naver.com"
-          productName="유리아쥬 립밤"
-          productImg="https://github.com/gonggu09/frontend_gonggu09/assets/129318957/7c401452-f25d-4cde-b506-2005907d5ed7"
-          sellerImg="https://github.com/gonggu09/frontend_gonggu09/assets/129318957/7c401452-f25d-4cde-b506-2005907d5ed7"
-          sellerName="하루"
-          startDate="2024-05-04"
-          endDate="2024-06-25"
-          price="28000"
-        />
-        <BuyProduct
-          url="https://www.naver.com"
-          productName="유리아쥬 립밤"
-          productImg="https://github.com/gonggu09/frontend_gonggu09/assets/129318957/7c401452-f25d-4cde-b506-2005907d5ed7"
-          sellerImg="https://github.com/gonggu09/frontend_gonggu09/assets/129318957/7c401452-f25d-4cde-b506-2005907d5ed7"
-          sellerName="하루"
-          startDate="2024-05-04"
-          endDate="2024-06-25"
-          price="28000"
+          url="https://link.inpock.co.kr/boramchan_mk?fbclid=PAAaZhiw1B2cKlckuraYpFdoVBNtR32nEQklWPkRCwJQEqQLt4xjXDlty17Ww"
+          productName="쿠션"
+          productImg="https://github.com/gonggu09/frontend_gonggu09/assets/129318957/ce777b30-89a4-440f-9e8b-fb537b4ce791"
+          sellerImg="https://github.com/gonggu09/frontend_gonggu09/assets/129318957/ce777b30-89a4-440f-9e8b-fb537b4ce791"
+          sellerName="솔핑"
+          startDate="2024-05-24"
+          endDate="2024-06-01"
+          price="30000"
         />
       </Section>
     </Container>
@@ -117,4 +128,5 @@ const Section = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
+  overflow: scroll;
 `;

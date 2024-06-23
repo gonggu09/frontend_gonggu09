@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { instance } from "./api/insance";
+import { useNavigate } from "react-router-dom";
 
 const NewProduct = () => {
   const [formData, setFormData] = useState({
@@ -11,6 +13,7 @@ const NewProduct = () => {
     url: "",
   });
   const [previewImg, setPreviewImg] = useState(null);
+  const navigation = useNavigate();
 
   const handleChange = (e) => {
     const { name, value, files } = e.target;
@@ -28,9 +31,33 @@ const NewProduct = () => {
     setPreviewImg(null);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
+    const data = new FormData();
+    data.append("productName", formData.productName);
+    data.append("price", formData.price);
+    data.append("productImg", formData.file);
+    data.append("startDate", formData.startDate);
+    data.append("endDate", formData.endDate);
+    data.append("sellerId", 1);
+    data.append("url", formData.url);
+
+    try {
+      const response = await instance.post("/gonggu/item/", data, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+
+      if (response.status === 201) {
+        navigation("/sell");
+      } else {
+        alert("에러 입니다");
+      }
+    } catch (error) {
+      console.error("Error uploading data", error);
+      alert("에러 입니다");
+    }
   };
 
   return (
