@@ -1,19 +1,50 @@
 <!DOCTYPE html>
 <html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
 
-<head>
-  <meta charset="utf-8" />
-  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#000000" />
-  <meta name="description" content="Web site created using create-react-app" />
+    <title>React App</title>
 
-  <title>React App</title>
-</head>
+    <!-- Pretendard-Regular 폰트를 정의하고 적용하는 스타일 -->
+    <style>
+      @font-face {
+        font-family: "Pretendard-Regular";
+        src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+          format("woff");
+        font-weight: 400;
+        font-style: normal;
+      }
 
-<body>
-  <noscript>You need to enable JavaScript to run this app.</noscript>
-  <div id="root"></div>
-</body>
+      body {
+        font-family: "Pretendard-Regular", sans-serif; /* Pretendard-Regular을 첫 번째로 지정 */
+        background-color: black;
+        color: white;
+        margin: 0;
+        padding: 0;
+      }
 
+      /* 필요에 따라 다른 요소에도 폰트를 적용할 수 있습니다 */
+      h1 {
+        font-family: "Pretendard-Regular", sans-serif;
+      }
+
+      /* 기타 스타일링은 여기에 추가 */
+    </style>
+  </head>
+
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root">
+      <!-- 여기에 앱 컨텐츠 추가 -->
+      <h1>앱 컨텐츠 예시</h1>
+      <p>이곳에 앱의 다른 내용을 추가할 수 있습니다.</p>
+    </div>
+  </body>
 </html>
