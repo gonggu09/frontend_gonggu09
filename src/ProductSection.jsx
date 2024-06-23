@@ -1,21 +1,29 @@
 import styled from "styled-components";
 
-const ProductSection = () => {
+const ProductSection = ({
+  url,
+  productName,
+  productImg,
+  sellerImg,
+  sellerName,
+  startDate,
+  endDate,
+  price,
+}) => {
   return (
-    <Container>
-      <ProductImage
-        src="https://github.com/gonggu09/frontend_gonggu09/assets/129318957/7c401452-f25d-4cde-b506-2005907d5ed7"
-        alt=""
-      />
+    <Container href={url}>
+      <ProductImage src={productImg} alt="상품 이미지" />
       <Content>
-        <ProductName>상품명</ProductName>
+        <ProductName>{productName}</ProductName>
         <DetailContent>
           <Profile>
-            <ProfileImage src="https://github.com/gonggu09/frontend_gonggu09/assets/129318957/7c401452-f25d-4cde-b506-2005907d5ed7" />
-            <Text>하루</Text>
+            <ProfileImage src={sellerImg} alt="판매자 이미지" />
+            <Text>{sellerName}</Text>
           </Profile>
-          <Text>공구 기간 : 2024.05.14 ~ 2024.05.16</Text>
-          <Text>가격 : 28000원</Text>
+          <Text>
+            공구 기간 : {startDate} ~ {endDate}
+          </Text>
+          <Text>가격 : {price}원</Text>
         </DetailContent>
       </Content>
     </Container>
@@ -23,7 +31,7 @@ const ProductSection = () => {
 };
 export default ProductSection;
 
-const Container = styled.div`
+const Container = styled.a`
   display: flex;
   width: 370px;
   height: 120px;

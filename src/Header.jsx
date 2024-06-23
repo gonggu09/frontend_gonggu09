@@ -13,7 +13,10 @@ export default Header;
 const Container = styled.div`
   display: flex;
   justify-content: center;
-  padding: 20px;
+  width: 430px;
+  padding: 20px 0;
+  background-color: white;
+  border-bottom: 1px solid #d9d9d9;
 `;
 
 const Logo = styled.span`
